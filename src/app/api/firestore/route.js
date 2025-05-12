@@ -1,9 +1,9 @@
 import { getFirestore, collection, getDocs, doc, setDoc } from "firebase/firestore";
-import app from "../../../firebase";
+import { db, auth } from '../../../firebase/config';
 
 import { NextResponse } from "next/server";
 
-const firestore = getFirestore(app);
+const firestore = getFirestore(db);
 
 export async function GET() {
     const snapshot = await getDocs(collection(firestore, "cartas"));
